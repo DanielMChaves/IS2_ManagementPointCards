@@ -1,4 +1,8 @@
 class PricesController < ApplicationController
+  def show
+    @price = Price.find(params[:id])
+  end
+
   def new
   end
 
