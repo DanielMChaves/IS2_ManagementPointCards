@@ -3,6 +3,9 @@ class PricesController < ApplicationController
   end
 
   def create
-    render plain: params[:price].inspect
+    @price = Price.new(params[:price])
+
+    @price.save
+    redirect_to @price
   end
 end
