@@ -1,0 +1,16 @@
+<h1>Lista de prices</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @prices.each do |price| %>
+    <tr>
+      <td><%= price.title %></td>
+      <td><%= price.text %></td>
+      <td><%= link_to 'Show', price_path(price) %></td>
+    </tr>
+  <% end %>
+</table>
