@@ -13,8 +13,11 @@ class PricesController < ApplicationController
   def create
     @price = Price.new(price_params)
 
-    @price.save
-    redirect_to @price
+    if @price.save
+      redirect_to @price
+    else
+      render 'new'
+    end
   end
 
   private
