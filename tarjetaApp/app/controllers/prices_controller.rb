@@ -3,11 +3,14 @@ class PricesController < ApplicationController
   end
 
   def create
-    @price = Price.new(
-      params.require(:price).permit(:title, :text)
-    )
+    @price = Price.new(price_params)
 
     @price.save
     redirect_to @price
+  end
+
+  private
+  def price_params
+    params.require(:price).permit(:title, :text)
   end
 end
