@@ -1,0 +1,20 @@
+INSERT INTO `tarjeta`.`CLIENT` (`dni`, `name`, `surname`, `tlf`, `email`, `address`) VALUES ('123456A', 'Daniel', 'Melero', '640-000-001', 'daniel.melero@me.com', 'Calle 1, Madrid');
+INSERT INTO `tarjeta`.`CLIENT` (`dni`, `name`, `surname`, `tlf`, `email`, `address`) VALUES ('234567B', 'Miguel', 'Núñez', '640-000-002', 'miguel.nunez@me.com', 'Calle 2, Madrid');
+INSERT INTO `tarjeta`.`CLIENT` (`dni`, `name`, `surname`, `tlf`, `email`, `address`) VALUES ('345678C', 'Javier', 'Ruiz', '640-000-003', 'javier.ruiz@me.com', 'Calle 3, Madrid');
+INSERT INTO `tarjeta`.`CLIENT` (`dni`, `name`, `surname`, `tlf`, `email`, `address`) VALUES ('456789D', 'Irene', 'Sabina', '640-000-004', 'irene.sabina@me.com', 'Calle 4, Madrid');
+INSERT INTO `tarjeta`.`CLIENT` (`dni`, `name`, `surname`, `tlf`, `email`, `address`) VALUES ('567890E', 'Carlos', 'Saito', '640-000-005', 'carlos.saito@me.com', 'Calle 5, Madrid');
+
+INSERT INTO `tarjeta`.`CARD` (`dni_client`) VALUES ('123456A');
+INSERT INTO `tarjeta`.`CARD` (`dni_client`) VALUES ('234567B');
+INSERT INTO `tarjeta`.`CARD` (`dni_client`) VALUES ('345678C');
+INSERT INTO `tarjeta`.`CARD` (`dni_client`) VALUES ('456789D');
+INSERT INTO `tarjeta`.`CARD` (`dni_client`) VALUES ('567890E');
+
+INSERT INTO `tarjeta`.`PRICE` (`status`, `requirement`, `lot`, `concept`) VALUES ('0', '300', '2', 'Tostadora');
+INSERT INTO `tarjeta`.`PRICE` (`status`, `requirement`, `lot`, `concept`) VALUES ('0', '100', '5', 'Literna');
+INSERT INTO `tarjeta`.`PRICE` (`status`, `requirement`, `lot`, `concept`) VALUES ('0', '350', '1', 'Cargador para el Automovil');
+INSERT INTO `tarjeta`.`PRICE` (`status`, `requirement`, `lot`, `concept`) VALUES ('0', '25', '10', 'Posavasos');
+
+# INSERT INTO `tarjeta`.`exchange` (`card_id`, `price_id`) VALUES ('?','?');
+
+# INSERT INTO `tarjeta`.`PURCHASE` (`id_store`, `total`, `dni_client`) VALUES ('?','?','?');
