@@ -1,5 +1,12 @@
 class Client < ActiveRecord::Base
-	validates :dni, presence: true
+
+	# Relation 1-Client : n-Cards
+  has_many :cards
+
+  self.primary_key = 'id'
+	
+	validates :id, presence: true
+	#validates :dni, presence: true
 	validates :name, presence: true
 	validates	:surname, presence: true
 	validates	:tlf, presence: true

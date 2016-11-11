@@ -16,12 +16,13 @@ ActiveRecord::Schema.define(version: 20161111111216) do
   create_table "cards", force: :cascade do |t|
     t.integer  "points"
     t.boolean  "status"
+    t.integer  "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "clients", id: false, force: :cascade do |t|
-    t.integer  "dni"
+    t.string   "id"
     t.string   "name"
     t.string   "surname"
     t.string   "tlf"

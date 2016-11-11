@@ -6,6 +6,9 @@ class CreateCards < ActiveRecord::Migration
       t.integer :points
       t.boolean :status
 
+      # t.references creates an attribute called "card_id" automatically
+      t.references :client, foreign_key: true
+
       t.timestamps null: false
     end
   end

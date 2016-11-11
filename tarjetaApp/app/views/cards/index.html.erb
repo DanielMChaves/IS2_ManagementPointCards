@@ -1,0 +1,22 @@
+<h1>Listing cards</h1>
+ 
+<table>
+  <tr>
+    <th>Card ID</th>
+    <th>Points</th>
+    <th>Status</th>
+    <th>DNI Client</th>
+  </tr>
+ 
+  <% @cards.each do |card| %>
+    <tr>
+      <td><%= card.id %></td>
+      <td><%= card.points %></td>
+      <td><%= card.status %></td>
+      <td><%= card.client_id %></td>
+      <td><%= link_to 'Show', card_path(card) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New card', new_card_path %>
