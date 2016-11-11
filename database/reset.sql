@@ -17,7 +17,6 @@ CREATE TABLE IF NOT EXISTS CARD (
   id INT PRIMARY KEY AUTO_INCREMENT,
   points INT NOT NULL DEFAULT '0',
   status BOOLEAN NOT NULL DEFAULT 0,
-  balance INT NOT NULL DEFAULT '0',
   dni_client VARCHAR(10) NOT NULL,
   FOREIGN KEY (dni_client) REFERENCES CLIENT(dni) ON UPDATE CASCADE
 );
@@ -39,13 +38,14 @@ CREATE TABLE IF NOT EXISTS exchange (
 );
 
 CREATE TABLE IF NOT EXISTS PURCHASE (
-  purchase_id INT PRIMARY KEY AUTO_INCREMENT,
-  id_store INT NOT NULL,
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  store_id INT NOT NULL,
   buy_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   total INT NOT NULL,
-  dni_client VARCHAR(10) NOT NULL,
-  FOREIGN KEY (dni_client) REFERENCES CLIENT(dni) ON UPDATE CASCADE
+  card_id VARCHAR(10) NOT NULL,
+  FOREIGN KEY (card_id) REFERENCES CARD(id) ON UPDATE CASCADE
 );
+
 
 INSERT INTO `tarjeta`.`CLIENT` (`dni`, `name`, `surname`, `tlf`, `email`, `address`) VALUES ('123456A', 'Daniel', 'Melero', '640-000-001', 'daniel.melero@me.com', 'Calle 1, Madrid');
 INSERT INTO `tarjeta`.`CLIENT` (`dni`, `name`, `surname`, `tlf`, `email`, `address`) VALUES ('234567B', 'Miguel', 'Núñez', '640-000-002', 'miguel.nunez@me.com', 'Calle 2, Madrid');
