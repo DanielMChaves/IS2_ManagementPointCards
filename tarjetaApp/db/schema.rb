@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20161111111216) do
   create_table "purchases", force: :cascade do |t|
     t.integer  "id_store"
     t.integer  "total"
+    t.datetime "buy_date"
     t.integer  "card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

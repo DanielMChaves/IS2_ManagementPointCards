@@ -5,6 +5,7 @@ class CreatePurchases < ActiveRecord::Migration
       # (integer, autoincrement, primary key)
       t.integer :id_store
       t.integer :total
+      t.timestamp :buy_date
 
       # t.references creates an attribute called "card_id" automatically
       t.references :card, foreign_key: true
