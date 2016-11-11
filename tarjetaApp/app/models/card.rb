@@ -6,7 +6,13 @@ class Card < ActiveRecord::Base
   belongs_to :client
 
   # Default values
-  after_initialize :set_default_values
+  before_create :set_default_values
+
+  def self.set_points(card_id, new_value)
+    card = Card.find(card_id)
+    card.points = new_value
+    card.save
+  end
 
   def set_default_values
     self.points = 0

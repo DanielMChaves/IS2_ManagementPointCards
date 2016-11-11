@@ -15,6 +15,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
 
     if @purchase.save
+      Card.set_points(@purchase.card_id, 1)
       redirect_to purchases_path
     else
       render 'new'
