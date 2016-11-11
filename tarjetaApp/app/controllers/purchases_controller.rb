@@ -15,18 +15,11 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
 
     if @purchase.save
-      increase_points()
+      Card.set_points(@purchase.card_id, 1)
       redirect_to purchases_path
     else
       render 'new'
     end
-  end
-
-  private
-  def increase_points
-    card = Card.find(@purchase.card_id)
-    new_value = 2
-    card.update(points: new_value)
   end
 
   private
