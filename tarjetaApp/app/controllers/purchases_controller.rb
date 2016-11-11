@@ -15,7 +15,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
 
     if @purchase.save
-      render 'index'
+      redirect_to purchases_path
     else
       render 'new'
     end
