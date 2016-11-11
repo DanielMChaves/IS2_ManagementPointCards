@@ -35,6 +35,13 @@ class ClientsController < ApplicationController
     end
   end
 
+  def destroy
+    @client = Client.find(params[:id])
+    @client.destroy
+   
+    redirect_to @client
+  end
+
   private
     def client_params
       params.require(:client).permit(:id, :name, :surname, :tlf, :email, :address)
