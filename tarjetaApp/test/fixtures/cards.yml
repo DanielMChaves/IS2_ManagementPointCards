@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  points: 1
+  status: false
+  dni_client: 
+
+two:
+  id: 1
+  points: 1
+  status: false
+  dni_client: 
