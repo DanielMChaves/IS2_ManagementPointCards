@@ -25,6 +25,16 @@ class ClientsController < ApplicationController
     end
   end
 
+  def update
+    @client = Client.find(params[:id])
+   
+    if @client.update(client_params)
+      redirect_to @client
+    else
+      render 'edit'
+    end
+  end
+
   private
     def client_params
       params.require(:client).permit(:id, :name, :surname, :tlf, :email, :address)

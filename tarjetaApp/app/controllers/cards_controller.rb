@@ -11,7 +11,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new()
+    @card = Card.new(card_params)
 
     @card.save
     redirect_to @card
