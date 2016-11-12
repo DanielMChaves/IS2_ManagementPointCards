@@ -42,10 +42,9 @@ CREATE TABLE IF NOT EXISTS PURCHASE (
   store_id INT NOT NULL,
   buy_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   total INT NOT NULL,
-  card_id VARCHAR(10) NOT NULL,
+  card_id INT NOT NULL,
   FOREIGN KEY (card_id) REFERENCES CARD(id) ON UPDATE CASCADE
 );
-
 
 INSERT INTO `tarjeta`.`CLIENT` (`dni`, `name`, `surname`, `tlf`, `email`, `address`) VALUES ('123456A', 'Daniel', 'Melero', '640-000-001', 'daniel.melero@me.com', 'Calle 1, Madrid');
 INSERT INTO `tarjeta`.`CLIENT` (`dni`, `name`, `surname`, `tlf`, `email`, `address`) VALUES ('234567B', 'Miguel', 'Núñez', '640-000-002', 'miguel.nunez@me.com', 'Calle 2, Madrid');
