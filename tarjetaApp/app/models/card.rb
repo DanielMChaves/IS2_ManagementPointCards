@@ -8,10 +8,11 @@ class Card < ActiveRecord::Base
   # Default values
   before_create :set_default_values
 
-  def self.set_points(card_id, new_value)
-    card = Card.find(card_id)
-    card.points = new_value
-    card.save
+  def increase_points(cents)
+    points = ((cents - 1) / 100.0).round
+
+    self.points = self.points + points
+    self.save
   end
 
   def set_default_values

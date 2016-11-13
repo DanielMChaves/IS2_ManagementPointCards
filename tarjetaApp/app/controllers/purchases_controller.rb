@@ -17,10 +17,11 @@ class PurchasesController < ApplicationController
 
   def create
     @card = Card.find(params[:card_id])
-    @purchase = @card.purchases.create
+    @purchase = @card.purchases.create(purchase_params)
 
     if @purchase.save
-      redirect_to cards_path(@card)
+      @card.increase_points(@purchase.total)
+      redirect_to card_path(@card)
     else
       render 'new'
     end
