@@ -29,4 +29,24 @@
 </p>
 
 <%= link_to 'Edit', edit_client_path(@client) %>
+
+<h2>Cards</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Points</th>
+    <th>Status</th>
+  </tr>
+  <% @client.cards.each do |card| %>
+    <tr>
+      <td><%= card.id %></td>
+      <td><%= card.points %></td>
+      <td><%= card.status %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= form_for([@client, @client.cards.build]) do |f| %>
+  <%= f.submit %>
+<% end %>
 <%= link_to 'Back', clients_path %>

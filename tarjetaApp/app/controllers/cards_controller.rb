@@ -11,10 +11,9 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(card_params)
-
-    @card.save
-    redirect_to @card
+    @client = Client.find(params[:client_id])
+    @card = @client.cards.create()
+    redirect_to client_path(@client)
   end
 
   def destroy
