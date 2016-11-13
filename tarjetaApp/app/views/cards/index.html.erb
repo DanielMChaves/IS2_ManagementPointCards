@@ -13,8 +13,10 @@
       <td><%= card.id %></td>
       <td><%= card.points %></td>
       <td><%= card.status %></td>
-      <td><%= card.client_id %></td>
-      <td><%= link_to 'Show', card_path(card) %></td>
+      <td><%= card.client %></td>
+      <td><%= link_to 'Destroy', card_path(card),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

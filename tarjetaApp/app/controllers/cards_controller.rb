@@ -16,4 +16,11 @@ class CardsController < ApplicationController
     @card.save
     redirect_to @card
   end
+
+  def destroy
+    @card = Card.find(params[:id])
+    @card.destroy
+
+    redirect_to @card
+  end
 end
