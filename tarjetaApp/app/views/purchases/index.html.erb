@@ -21,3 +21,6 @@
   <% end %>
 </table>
 
+<% if params[:card_id] %>
+  <%= link_to 'New purchase', new_card_purchase_path %>
+<% end %>
