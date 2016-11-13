@@ -16,11 +16,7 @@ class CardsController < ApplicationController
   end
 
   def new
-    if params[:client_id]
-      @card = Card.where(client_id: params[:client_id]).new
-    else
-      @card = Card.new
-    end
+    @card = Card.new
   end
 
   def edit

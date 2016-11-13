@@ -1,1 +1,17 @@
-<h1>EMTPY! (lol)</h1>
+<article>
+  <h2>Purchase ID: <%= @purchase.id %></h2>
+
+  <p>
+    <strong>Buy date</strong>
+    <%= @purchase.buy_date %>
+  </p>
+
+  <p>
+    <strong>Total</strong>
+    <%= @purchase.total %>
+  </p>
+
+  <%= link_to 'Edit', edit_purchase_path(@purchase) %>
+  <%= link_to 'Back', purchases_path %>
+</article>
+

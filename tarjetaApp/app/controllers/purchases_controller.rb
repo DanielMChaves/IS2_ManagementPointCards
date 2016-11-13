@@ -4,22 +4,43 @@ class PurchasesController < ApplicationController
   end
 
   def show
-    @purchases = Purchase.find(params[:id])
+    @purchase = Purchase.find(params[:id])
   end
 
   def new
     @purchase = Purchase.new
   end
 
+  def edit
+    @purchase = Purchase.find(params[:id])
+  end
+
   def create
-    @purchase = Purchase.new(purchase_params)
+    @card = Card.find(params[:card_id])
+    @purchase = @card.purchases.create
 
     if @purchase.save
-      Card.set_points(@purchase.card_id, 1)
-      redirect_to purchases_path
+      redirect_to cards_path(@card)
     else
       render 'new'
     end
+  end
+
+  def update
+    @purchase = Purchase.find(params[:id])
+
+    if @purchase.update(purchase_params)
+      redirect_to @purchase
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @purchase = Purchase.find(params[:id])
+    @purchase.destroy
+
+    redirect_to @purchase
   end
 
   private

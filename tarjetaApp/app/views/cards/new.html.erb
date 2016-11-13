@@ -1,7 +1,10 @@
 <h1>New Card</h1>
 
+<p>
+  <strong>Client DNI</strong>
+  <%= params[:client_id]%>
+</p>
 <%= form_for :card, url: client_cards_path do |f| %>
-  <p>You are going to create a new Card</p>
   <p>
     <%= f.submit %>
   </p>
