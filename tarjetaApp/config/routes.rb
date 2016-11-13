@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :clients do
-    resources :cards
+    resources :cards, shallow: true do
+      resources :purchases, shallow: true
+    end
   end
 
-  resources :cards
-
-  resources :purchases
+  resources :cards, only: [:index]
+  resources :purchases, only: [:index]
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
