@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root 'welcome#index'
 
-  resources :clients
+  resources :clients do
+    resources :cards
+  end
+
   resources :cards
+
   resources :purchases
 
   # You can have the root of your site routed with "root"
