@@ -29,8 +29,10 @@ class PurchasesController < ApplicationController
 
   def update
     @purchase = Purchase.find(params[:id])
+    @purchase.card.decrease_points(@purchase.total)
 
     if @purchase.update(purchase_params)
+      @purchase.card.increase_points(@purchase.total)
       redirect_to @purchase
     else
       render 'edit'
@@ -39,9 +41,10 @@ class PurchasesController < ApplicationController
 
   def destroy
     @purchase = Purchase.find(params[:id])
+    @purchase.card.decrease_points(@purchase.total)
     @purchase.destroy
 
-    redirect_to @purchase
+    redirect_to @purchase.card
   end
 
   private
