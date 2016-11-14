@@ -1,7 +1,6 @@
 class CreatePrices < ActiveRecord::Migration
   def change
     create_table :prices do |t|
-      t.integer :id
       t.integer :store_id
       t.timestamp :buy_date
       t.integer :total
