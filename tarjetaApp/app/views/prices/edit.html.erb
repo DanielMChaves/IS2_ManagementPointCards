@@ -1,50 +1,49 @@
-<h1>Editing client</h1>
- 
-<%= form_for :client, url: client_path(@client), method: :patch do |f| %>
- 
-  <% if @client.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@client.errors.count, "error") %> prohibited
-        this client from being saved:
-      </h2>
-      <ul>
-        <% @client.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
+<h1>Editing price</h1>
+
+<%= form_for :price, url: price_path(@price), method: :patch do |f| %>
+
+<% if @price.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@price.errors.count, "error") %> prohibited
+      this client from being saved:
+    </h2>
+    <ul>
+      <% @price.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
   <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :id %><br>
+    <%= f.text_field :id %>
   </p>
 
   <p>
-    <%= f.label :surname %><br>
-    <%= f.text_field :surname %>
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
   </p>
 
   <p>
-    <%= f.label :tlf %><br>
-    <%= f.text_field :tlf %>
+    <%= f.label :requirement %><br>
+    <%= f.text_field :requirement %>
   </p>
 
   <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.label :lot %><br>
+    <%= f.text_field :lot %>
   </p>
 
   <p>
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.label :concept %><br>
+    <%= f.text_field :concept %>
   </p>
- 
+
+ <%= link_to 'Back', prices_path %>
   <p>
     <%= f.submit %>
   </p>
- 
+
 <% end %>
- 
-<%= link_to 'Back', clients_path %>

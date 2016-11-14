@@ -16,13 +16,19 @@ class PricesController < ApplicationController
   end
 
   def create
-    render 'new'
+    @price = Price.new(price_params)
+
+    if @price.save
+      redirect_to @price
+    else
+      render 'new'
+    end
   end
 
   def update
     @price = Price.find(params[:id])
 
-    if @price.update(purchase_params)
+    if @price.update(price_params)
       redirect_to @price
     else
       render 'edit'
@@ -37,8 +43,8 @@ class PricesController < ApplicationController
   end
 
   private
-  def purchase_params
-    params.require(:price).permit(:id, :store_id, :buy_date, :total, :card)
+  def price_params
+    params.require(:price).permit(:status, :requirement, :lot, :concept)
   end
 
 end

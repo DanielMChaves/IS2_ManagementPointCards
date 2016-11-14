@@ -11,11 +11,11 @@
 
   <% @prices.each do |price| %>
     <tr>
-      <td><%= prices.id %></td>
-      <td><%= prices.status %></td>
-      <td><%= prices.requirement %></td>
-      <td><%= prices.lot %></td>
-      <td><%= prices.concept %></td>
+      <td><%= price.id %></td>
+      <td><%= price.status %></td>
+      <td><%= price.requirement %></td>
+      <td><%= price.lot %></td>
+      <td><%= price.concept %></td>
       <td><%= link_to 'Show', price_path(price) %></td>
       <td><%= link_to 'Edit', edit_price_path(price) %></td>
       <td><%= link_to 'Destroy', price_path(price),
