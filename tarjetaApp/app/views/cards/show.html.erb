@@ -1,0 +1,44 @@
+<article>
+  <h2>Card ID: <%= @card.id %></h2>
+
+  <p>
+    <strong>Status</strong>
+    <%= @card.status %>
+  </p>
+
+  <p>
+    <strong>Points</strong>
+    <%= @card.points %>
+  </p>
+
+  <p>
+    <strong>DNI Client</strong>
+    <%= @card.client_id %>
+  </p>
+
+  <%= link_to 'Edit', edit_card_path(@card) %>
+
+  <hr>
+
+  <h3>Purchases</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>ID Store</th>
+      <th>Buy date</th>
+      <th>Total</th>
+    </tr>
+
+    <% @card.purchases.each do |purchase| %>
+      <tr>
+        <td><%= purchase.id %></td>
+        <td><%= purchase.id_store %></td>
+        <td><%= purchase.buy_date %></td>
+        <td><%= purchase.total %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to 'New purchase', new_card_purchase_path(card_id: params[:id]) %>
+  <%= link_to 'Back', cards_path %>
+</article>
