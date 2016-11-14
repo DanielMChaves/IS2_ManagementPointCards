@@ -1,18 +1,18 @@
 class PricesController < ApplicationController
   def index
-    @prices = Price.all?
+    @prices = Price.all
   end
 
   def show
-    @prices = Price.find(params[:id])
+    @price = Price.find(params[:id])
   end
 
   def new
-    @prices = Price.new
+    @price = Price.new
   end
 
   def edit
-    @prices = Price.find(params[:id])
+    @price = Price.find(params[:id])
   end
 
   def create

@@ -1,0 +1,28 @@
+<h1>Listing prices</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Status</th>
+    <th>Requirement</th>
+    <th>Lot</th>
+    <th>Concept</th>
+  </tr>
+
+  <% @prices.each do |price| %>
+    <tr>
+      <td><%= prices.id %></td>
+      <td><%= prices.status %></td>
+      <td><%= prices.requirement %></td>
+      <td><%= prices.lot %></td>
+      <td><%= prices.concept %></td>
+      <td><%= link_to 'Show', price_path(price) %></td>
+      <td><%= link_to 'Edit', edit_price_path(price) %></td>
+      <td><%= link_to 'Destroy', price_path(price),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New price', new_price_path %>

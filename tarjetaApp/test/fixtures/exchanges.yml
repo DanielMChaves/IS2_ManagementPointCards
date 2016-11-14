@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_card: 
+  id_price: 
+  exchange_date: 2016-11-14 16:40:16
+
+two:
+  id_card: 
+  id_price: 
+  exchange_date: 2016-11-14 16:40:16
