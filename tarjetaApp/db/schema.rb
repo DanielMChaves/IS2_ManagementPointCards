@@ -46,15 +46,12 @@ ActiveRecord::Schema.define(version: 20161114154016) do
   add_index "exchanges", ["price_id"], name: "index_exchanges_on_price_id"
 
   create_table "prices", force: :cascade do |t|
-    t.integer  "store_id"
-    t.datetime "buy_date"
-    t.integer  "total"
-    t.integer  "card_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
-  add_index "prices", ["card_id"], name: "index_prices_on_card_id"
+    t.integer "status"
+    t.integer "requirement"
+    t.integer "lot"
+    t.text    "concept"
+  end
 
   create_table "purchases", force: :cascade do |t|
     t.integer  "id_store"
