@@ -53,7 +53,9 @@ OR status = 0;
 SELECT pu.store_id, pu.buy_date, pu.total
 FROM tarjeta.CARD ca, tarjeta.PURCHASE pu
 WHERE pu.card_id = ca.id
-AND ca.dni = '123456A';
+AND ca.dni = '123456A'
+AND pu.buy_date > ''
+ORDER BY pu.id DESC;
 
 # Movimientos clientes (CANJEOS)
 SELECT pr.concept, ex.exchange_date

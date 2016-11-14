@@ -105,3 +105,15 @@ UPDATE `tarjeta`.`CARD` SET `points`='500' WHERE `id`='1';
 UPDATE `tarjeta`.`PRICE` SET `lot`='10' WHERE `id`='4';
     # Si el lot es mayor de 1 poner el status a 0
     # UPDATE `tarjeta`.`PRICE` SET `status`='0' WHERE `id`='4';
+
+###############
+# OPERACIÓN 06: Daniel realiza una compra en El Corte Inglés
+###############
+
+# Realizamos una compra para acumular los puntos en la tarjeta
+INSERT INTO `tarjeta`.`PURCHASE` (`store_id`, `total`, `card_id`) VALUES ('4','1500','1');
+    # Los puntos a introducir en la tarjeta es la mitad de la compra hecha 500 puntos
+    # Obtenemos los puntos actuales de la tarjeta para incrementarlos
+    # CONSULTA: Obtener puntos de una tarjeta y calcular los puntos nuevos
+    # SELECT points FROM tarjeta.CARD WHERE id = 'id_elegido';
+UPDATE `tarjeta`.`CARD` SET `points`='2000' WHERE `id`='1';
