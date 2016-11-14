@@ -41,5 +41,4 @@ class PricesController < ApplicationController
     params.require(:price).permit(:id, :store_id, :buy_date, :total, :card)
   end
 
-
 end
