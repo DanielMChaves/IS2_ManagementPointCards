@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113151405) do
+ActiveRecord::Schema.define(version: 20161114154016) do
 
   create_table "cards", force: :cascade do |t|
     t.integer  "points"
@@ -33,6 +33,28 @@ ActiveRecord::Schema.define(version: 20161113151405) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "exchanges", force: :cascade do |t|
+    t.integer  "card_id"
+    t.integer  "price_id"
+    t.datetime "exchange_date"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "exchanges", ["card_id"], name: "index_exchanges_on_card_id"
+  add_index "exchanges", ["price_id"], name: "index_exchanges_on_price_id"
+
+  create_table "prices", force: :cascade do |t|
+    t.integer  "store_id"
+    t.datetime "buy_date"
+    t.integer  "total"
+    t.integer  "card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "prices", ["card_id"], name: "index_prices_on_card_id"
 
   create_table "purchases", force: :cascade do |t|
     t.integer  "id_store"
