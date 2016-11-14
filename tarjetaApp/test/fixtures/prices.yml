@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  store_id: 
+  buy_date: 2016-11-14 16:04:17
+  total: 
+  card_id: 
+
+two:
+  id: 
+  store_id: 
+  buy_date: 2016-11-14 16:04:17
+  total: 
+  card_id: 
