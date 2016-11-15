@@ -1,0 +1,24 @@
+<h1>Listing exchanges</h1>
+
+<table>
+  <tr>
+    <th>Card ID</th>
+    <th>Price ID</th>
+    <th>Exchange Date</th>
+  </tr>
+
+  <% @exchanges.each do |exchange| %>
+    <tr>
+      <td><%= exchange.card_id %></td>
+      <td><%= exchange.price_id %></td>
+      <td><%= exchange.exchange_date %></td>
+      <td><%= link_to 'Show', exchange_path(exchange) %></td>
+      <td><%= link_to 'Edit', edit_exchange_path(exchange) %></td>
+      <td><%= link_to 'Destroy', exchange_path(exchange),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New exchange', new_exchange_path %>
