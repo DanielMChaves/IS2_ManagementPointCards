@@ -1,5 +1,6 @@
 <h1>Editing Exchange</h1>
-<%= form_for :price, url: exchanges_path do |f| %>
+
+<%= form_for :price, url: exchanges_path(@exchange), method: :patch do |f| %>
     <% if @exchange.errors.any? %>
       <div id="error_explanation">
         <h2>

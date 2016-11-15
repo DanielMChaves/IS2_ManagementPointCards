@@ -1,6 +1,6 @@
 class ExchangesController < ApplicationController
   def index
-    @exchange = Exchange.all
+    @exchanges = Exchange.all
   end
 
   def show
