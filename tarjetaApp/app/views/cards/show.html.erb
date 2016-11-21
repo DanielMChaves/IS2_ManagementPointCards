@@ -35,7 +35,11 @@
         <td><%= purchase.id_store %></td>
         <td><%= purchase.buy_date %></td>
         <td><%= purchase.total %></td>
-      </tr>
+        <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
+        <td><%= link_to 'Destroy', purchase_path(purchase),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %></td>
+        </tr>
     <% end %>
   </table>
 

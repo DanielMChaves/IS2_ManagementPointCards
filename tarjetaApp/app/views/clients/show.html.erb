@@ -44,6 +44,7 @@
       <td><%= card.id %></td>
       <td><%= card.points %></td>
       <td><%= card.status %></td>
+      <td><%= link_to 'Show', card_path(card) %></td>
     </tr>
   <% end %>
 </table>

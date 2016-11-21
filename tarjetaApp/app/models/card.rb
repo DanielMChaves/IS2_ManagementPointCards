@@ -14,7 +14,12 @@ class Card < ActiveRecord::Base
     self.points = self.points + points
     self.save
   end
+  def decrease_points(cents)
+    points = ((cents - 1) / 100.0).round
 
+    self.points = self.points - points
+    self.save
+  end
   def set_default_values
     self.points = 0
     self.status = true
