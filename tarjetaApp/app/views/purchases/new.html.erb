@@ -5,29 +5,39 @@
   <%= params[:card_id] %>
 </p>
 <%= form_for :purchase, url: card_purchases_path do |f| %>
-  <p>
-    <%= f.label :id_store%><br>
-    <%= f.text_field :id_store %>
-  </p>
+  <div class="form-group row">
+    <%= f.label :id_store, class: 'col-xs-3 col-form-label' %>
+    <div class="col-xs-9">
+      <%= f.text_field :id_store, class: 'form-control' %>
+    </div>
+  </div>
 
-  <p>
-    <%= f.label :buy_date %><br>
-    <%= f.text_field :buy_date %>
-  </p>
+  <div class="form-group row">
+    <%= f.label :buy_date, class: 'col-xs-3 col-form-label' %>
+    <div class="col-xs-9">
+      <%= f.date_field :buy_date, class: 'form-control' %>
+    </div>
+  </div>
 
-  <p>
-    <%= f.label :total %><br>
-    <%= f.text_field :total %>
-  </p>
+  <div class="form-group row">
+    <%= f.label :total, class: 'col-xs-3 col-form-label' %>
+    <div class="col-xs-9">
+      <%= f.text_field :total, class: 'form-control' %>
+    </div>
+  </div>
 
-  <p>
-    <%= f.label :card_id %><br>
-    <%= f.text_field :card_id %>
-  </p>
+  <!--
+  <div class="form-group row">
+    <%= f.label :card_id, class: 'col-xs-3 col-form-label' %>
+    <div class="col-xs-9">
+      <%= f.text_field :card_id, class: 'form-control' %>
+    </div>
+  </div>
+  -->
 
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="form-group">
+    <%= f.submit 'Create new purchase', class: 'btn btn-primary' %>
+  </div>
 <% end %>
 
 <%= link_to 'Back', purchases_path %>
