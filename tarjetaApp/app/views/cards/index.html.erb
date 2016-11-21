@@ -1,26 +1,30 @@
 <h1>Listing cards</h1>
- 
-<table>
-  <tr>
-    <th>Card ID</th>
-    <th>Points</th>
-    <th>Status</th>
-    <th>DNI Client</th>
-  </tr>
- 
-  <% @cards.each do |card| %>
+
+<table class="table">
+  <thead>
     <tr>
-      <td><%= card.id %></td>
-      <td><%= card.points %></td>
-      <td><%= card.status %></td>
-      <td><%= card.client_id %></td>
-      <td><%= link_to 'Show', card_path(card) %></td>
-      <td><%= link_to 'Edit', edit_card_path(card) %></td>
-      <td><%= link_to 'Destroy', card_path(card),
-          method: :delete,
-          data: { confirm: 'Are you sure?' } %></td>
+      <th>Card ID</th>
+      <th>Points</th>
+      <th>Status</th>
+      <th>DNI Client</th>
     </tr>
-  <% end %>
+  </thead>
+
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.id %></td>
+        <td><%= card.points %></td>
+        <td><%= card.status %></td>
+        <td><%= card.client_id %></td>
+        <td><%= link_to 'Show', card_path(card) %></td>
+        <td><%= link_to 'Edit', edit_card_path(card) %></td>
+        <td><%= link_to 'Destroy', card_path(card),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <% if params[:client_id] %>

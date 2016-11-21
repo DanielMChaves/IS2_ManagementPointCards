@@ -1,30 +1,34 @@
 <h1>Listing clients</h1>
- 
-<table>
-  <tr>
-    <th>Dni</th>
-    <th>Name</th>
-    <th>Surname</th>
-    <th>Tlf</th>
-    <th>Email</th>
-    <th>Address</th>
-  </tr>
- 
-  <% @clients.each do |client| %>
+
+<table class="table">
+  <thead>
     <tr>
-      <td><%= client.id %></td>
-      <td><%= client.name %></td>
-      <td><%= client.surname %></td>
-      <td><%= client.tlf %></td>
-      <td><%= client.email %></td>
-      <td><%= client.address %></td>
-      <td><%= link_to 'Show', client_path(client) %></td>
-      <td><%= link_to 'Edit', edit_client_path(client) %></td>
-      <td><%= link_to 'Destroy', client_path(client),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+      <th>Dni</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Tlf</th>
+      <th>Email</th>
+      <th>Address</th>
     </tr>
-  <% end %>
+  </thead>
+
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.id %></td>
+        <td><%= client.name %></td>
+        <td><%= client.surname %></td>
+        <td><%= client.tlf %></td>
+        <td><%= client.email %></td>
+        <td><%= client.address %></td>
+        <td><%= link_to 'Show', client_path(client) %></td>
+        <td><%= link_to 'Edit', edit_client_path(client) %></td>
+        <td><%= link_to 'Destroy', client_path(client),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <%= link_to 'New client', new_client_path %>
