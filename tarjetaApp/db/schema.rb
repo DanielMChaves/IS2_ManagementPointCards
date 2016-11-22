@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20161114154016) do
   add_index "exchanges", ["price_id"], name: "index_exchanges_on_price_id"
 
   create_table "prices", force: :cascade do |t|
-
     t.integer "status"
     t.integer "requirement"
     t.integer "lot"
