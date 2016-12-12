@@ -1,18 +1,18 @@
 <h1>New Exchange</h1>
 <%= form_for :exchange, url: exchanges_path do |f| %>
-    <% if @exchange.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@exchange.errors.count, "error") %> prohibited
-          this client from being saved:
-        </h2>
-        <ul>
-          <% @exchange.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <% if @exchange.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@exchange.errors.count, "error") %> prohibited
+        this client from being saved:
+      </h2>
+      <ul>
+        <% @exchange.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="form-group row">
     <%= f.label :card_id, class: 'col-xs-3 col-form-label' %>
@@ -31,7 +31,7 @@
   <div class="form-group row">
     <%= f.label :exchange_date, class: 'col-xs-3 col-form-label' %>
     <div class="col-xs-9">
-      <%= f.text_field :exchange_date, class: 'form-control' %>
+      <%= f.date_field :exchange_date, class: 'form-control' %>
     </div>
   </div>
 
