@@ -1,8 +1,4 @@
 class Price < ActiveRecord::Base
-
-   # Default values
-   before_create :set_default_values
-
    def change_status(status)
      self.status = 0
    end
@@ -25,11 +21,5 @@ class Price < ActiveRecord::Base
      if self.lot == 0
        change_status(false)
      end
-   end
-
-   def set_default_values
-     self.status = false
-     self.requirement = 0
-     self.lot = 0
    end
 end
