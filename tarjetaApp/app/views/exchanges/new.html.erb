@@ -14,24 +14,32 @@
       </div>
     <% end %>
 
-  <p>
-    <%= f.label :card_id %><br>
-    <%= f.text_field :card_id %>
-  </p>
+  <div class="form-group row">
+    <%= f.label :card_id, class: 'col-xs-3 col-form-label' %>
+    <div class="col-xs-9">
+      <%= f.text_field :card_id, class: 'form-control' %>
+    </div>
+  </div>
 
-  <p>
-    <%= f.label :price_id %><br>
-    <%= f.text_field :price_id %>
-  </p>
+  <div class="form-group row">
+    <%= f.label :price_id, class: 'col-xs-3 col-form-label' %>
+    <div class="col-xs-9">
+      <%= f.text_field :price_id, class: 'form-control' %>
+    </div>
+  </div>
 
-  <p>
-    <%= f.label :exchange_date %><br>
-    <%= f.text_field :exchange_date %>
-  </p>
+  <div class="form-group row">
+    <%= f.label :exchange_date, class: 'col-xs-3 col-form-label' %>
+    <div class="col-xs-9">
+      <%= f.text_field :exchange_date, class: 'form-control' %>
+    </div>
+  </div>
 
- <%= link_to 'Back', exchanges_path %>
-  <p>
-    <%= f.submit %>
-  </p>
-
+  <div class="form-group row">
+    <div class="col-xs-12">
+      <%= f.submit 'Create exchange', class: 'btn btn-primary' %>
+    </div>
+  </div>
 <% end %>
+
+<%= link_to 'Back', exchanges_path %>
