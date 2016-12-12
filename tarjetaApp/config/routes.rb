@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :prices
   resources :exchanges
 
+  get 'client-zone' => 'zone#login'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
