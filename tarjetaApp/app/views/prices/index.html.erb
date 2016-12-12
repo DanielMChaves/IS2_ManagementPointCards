@@ -1,28 +1,32 @@
 <h1>Listing prices</h1>
 
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Status</th>
-    <th>Requirement</th>
-    <th>Lot</th>
-    <th>Concept</th>
-  </tr>
-
-  <% @prices.each do |price| %>
+<table class="table">
+  <thead>
     <tr>
-      <td><%= price.id %></td>
-      <td><%= price.status %></td>
-      <td><%= price.requirement %></td>
-      <td><%= price.lot %></td>
-      <td><%= price.concept %></td>
-      <td><%= link_to 'Show', price_path(price) %></td>
-      <td><%= link_to 'Edit', edit_price_path(price) %></td>
-      <td><%= link_to 'Destroy', price_path(price),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+      <th>Id</th>
+      <th>Status</th>
+      <th>Requirement</th>
+      <th>Lot</th>
+      <th>Concept</th>
     </tr>
-  <% end %>
+  </thead>
+
+  <tbody>
+    <% @prices.each do |price| %>
+      <tr>
+        <td><%= price.id %></td>
+        <td><%= price.status %></td>
+        <td><%= price.requirement %></td>
+        <td><%= price.lot %></td>
+        <td><%= price.concept %></td>
+        <td><%= link_to 'Show', price_path(price) %></td>
+        <td><%= link_to 'Edit', edit_price_path(price) %></td>
+        <td><%= link_to 'Destroy', price_path(price),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <%= link_to 'New price', new_price_path %>
