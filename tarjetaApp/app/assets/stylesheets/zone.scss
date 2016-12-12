@@ -1,3 +1,43 @@
+.navbar {
+  display: none;
+}
+
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   background: #CCC;
+}
+
+.login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__form {
+  background: #FFF;
+  padding: 32px;
+  border-radius: 8px;
+}
+
+.login__input {
+  display: inline-block;
+  width: 100%;
+
+  border: 1px #CCC solid;
+  padding: 8px;
+  border-radius: 2px;
+  margin: 8px 0;
+}
+
+.login__submit {
+
 }

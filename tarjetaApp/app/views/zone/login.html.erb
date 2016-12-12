@@ -1,11 +1,9 @@
-<h1>Login</h1>
 
-<div>
-  <form>
-    <label for="dni">DNI</label>
-    <input type="text" id="dni" name="id">
-
-    <label for="pass">Contraseña</label>
-    <input type="password" id="pass">
+<div class="login">
+  <form class="login__form" method="get" action="/client-zone/profile">
+    <h1>Login</h1>
+    <input class="login__input" type="text" id="dni" name="id" placeholder="DNI">
+    <input class="login__input" type="password" id="pass" placeholder="Password">
+    <input class="login__submit btn btn-primary" type="submit" value="Log in">
   </form>
 </div>
