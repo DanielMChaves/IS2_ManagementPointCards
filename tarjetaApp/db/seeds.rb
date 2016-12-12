@@ -1,3 +1,4 @@
+# coding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -39,3 +40,32 @@ Card.create(client: edmundo)
 Card.create(client: josefa)
 Card.create(client: edmundo)
 Card.create(client: edmundo)
+
+# Create 4 prices
+Price.create(
+  status: true,
+  requirement: 10,
+  lot: 10,
+  concept: 'Galleta de la suerte'
+)
+
+Price.create(
+  status: true,
+  requirement: 100,
+  lot: 1,
+  concept: 'Tarta especial'
+)
+
+Price.create(
+  status: true,
+  requirement: 20,
+  lot: 3,
+  concept: 'Diente de león'
+)
+
+Price.create(
+  status: false,
+  requirement: 23,
+  lot: 20,
+  concept: 'Cabello de Ángel'
+)
