@@ -8,7 +8,25 @@ html {
 
 body {
   height: 100%;
-  background: #CCC;
+  background: #EEE;
+}
+
+h1 {
+  color: #666;
+  font-size: 60px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+h2 {
+  border-top: 2px solid #999;
+  color: #777;
+  font-size: 28px;
+  font-weight: 300;
+  max-width: 560px;
+  padding-top: 16px;
 }
 
 .login {
@@ -40,4 +58,80 @@ body {
 
 .login__submit {
 
+}
+
+.myprofile {
+  float: left;
+  width: 240px;
+}
+
+.mycards {
+  margin-left: 264px;
+}
+
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tile {
+  flex: 0 0 auto;
+  margin-right: 24px;
+  border-top: 2px solid #999;
+  width: 240px;
+  height: 240px;
+}
+
+.tile:hover {
+  border-color: #ff5252;
+}
+
+.actions {
+  visibility: hidden;
+  color: #ff5252;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: right;
+  margin-top: 16px;
+}
+
+.tile:hover .actions {
+  visibility: visible;
+}
+
+.mycard {
+  height: 180px;
+}
+
+.mycard__id {
+  font-size: 60px;
+  font-weight: 100;
+  color: #777;
+}
+
+.mycard__points {
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+.mycard__actions {}
+
+.price__id {
+  font-size: 60px;
+  font-weight: 100;
+  color: #777;
+}
+
+.price__name {
+  font-size: 18px;
+  color: #777;
+  font-weight: 600;
+}
+
+.price__points {
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
 }

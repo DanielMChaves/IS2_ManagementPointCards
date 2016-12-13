@@ -1,0 +1,23 @@
+<h1>Hola <%= @client.name %><br>estas son tus tarjetas</h1>
+<aside class="myprofile">
+  <h2>¿Necesitas puntos?</h2>
+  <p>Encuentra los establecimientos en los que puedes ganar puntos por cada compra</p>
+  <!--
+  <h2>Y estos, tus datos</h2>
+  <div>Teléfono <%= @client.tlf %></div>
+  <div><%= @client.email %></div>
+  <div><%= @client.address %></div>
+  -->
+</aside>
+
+<main class="mycards">
+  <div class="tiles">
+    <% @cards.each do |card| %>
+      <div class="tile mycard">
+        <div class="mycard__id">#<%= card.id %></div>
+        <div class="mycard__points"><%= card.points %> puntos</div>
+        <div class="mycard__actions actions">Desactivar</div>
+      </div>
+    <% end %>
+  </div>
+</main>

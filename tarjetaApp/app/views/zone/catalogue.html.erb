@@ -1,0 +1,12 @@
+<h1>Catálogo de premios</h1>
+
+<div class="tiles prices">
+  <% @prices.each do |price| %>
+    <div class="tile price">
+      <div class="price__id">#<%= price.id %></div>
+      <div class="price__name"><%= price.concept %></div>
+      <div class="price__points"><%= price.requirement %> puntos</div>
+      <div class="price__actions actions">Canjear</div>
+    </div>
+  <% end %>
+</div>
