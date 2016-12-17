@@ -6,7 +6,9 @@
       <div class="price__id">#<%= price.id %></div>
       <div class="price__name"><%= price.concept %></div>
       <div class="price__points"><%= price.requirement %> puntos</div>
-      <div class="price__actions actions">Canjear</div>
+      <div class="price__actions actions">
+        <a href="/client-zone/catalogue/<%= price.id %>?id=<%= @client.id %>">Canjear</a>
+      </div>
     </div>
   <% end %>
 </div>

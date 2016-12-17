@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'client-zone/profile' => 'zone#profile'
   get 'client-zone/catalogue' => 'zone#catalogue'
   get 'client-zone/catalogue/:price_id' => 'zone#price'
+  post 'client-zone/exchange' => 'zone#exchange'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

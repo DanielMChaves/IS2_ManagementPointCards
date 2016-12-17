@@ -1,1 +1,33 @@
 <h1>vas a canjear<br>el premio</h1>
+
+<div class="tile price">
+  <div class="price__name"><%= @price.concept %></div>
+  <div class="price__points"><%= @price.requirement %> puntos</div>
+</div>
+
+<div>
+  <aside class="myprofile">
+    <h2>¿Con qué tarjeta?</h2>
+  </aside>
+  <main class="mycards">
+    <%= form_tag("/client-zone/exchange", method: "post") do |f| %>
+      <%= hidden_field_tag(:price_id, @price.id) %>
+      <%= hidden_field_tag(:client_id, @client.id) %>
+
+      <div class="tiles">
+        <% @cards.each do |card| %>
+          <label>
+            <div class="mycard tile">
+              <div class="mycard__id">
+                <%= radio_button_tag(:card_id, card.id) %>
+                #<%= card.id %>
+                <div class="mycard__points"><%= card.points %> puntos</div>
+              </div>
+            </div>
+        </label>
+        <% end %>
+      </div>
+      <input type="submit" value="Canjear" class="btn btn-primary">
+    <% end %>
+  </main>
+</div>
